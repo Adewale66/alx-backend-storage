@@ -1,6 +1,6 @@
 -- SQL script creates a stored procedure
 DELIMITER //
-CREATE PROCEDURE IF NOT EXISTS ComputeAverageScoreForUser (IN user_id INT)
+CREATE PROCEDURE ComputeAverageScoreForUser (IN user_id INT)
 BEGIN
 	DECLARE avg_score FLOAT ;
 	SELECT AVG(score) INTO avg_score FROM corrections c WHERE c.user_id = user_id;
