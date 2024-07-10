@@ -8,7 +8,7 @@ BEGIN
 		INSERT INTO projects (name) VALUES (project_name);
 		SET p_id = LAST_INSERT_ID();
 	END IF;
-	UPDATE corrections c set c.score = score WHERE c.user_id = user_id AND c.project_id = p_id; 
+	INSERT INTO corrections	(user_id, project_id, score) VALUES(user_id, p_id, score);
 
 END $$
 
