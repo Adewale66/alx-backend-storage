@@ -1,4 +1,5 @@
 -- SQL SCRIPT for function
+DELIMITER $$
 CREATE FUNCTION SafeDiv(a INT, b INT)
 RETURNS INT
 BEGIN
@@ -7,4 +8,6 @@ BEGIN
 	ELSE
 		RETURN a / b;
 	END IF;
-END;
+END $$
+
+DELIMITER ;
